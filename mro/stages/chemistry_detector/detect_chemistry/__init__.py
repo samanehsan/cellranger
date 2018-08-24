@@ -161,6 +161,9 @@ def prepare_transcriptome_indexes(reference_path, vdj_reference_path):
     martian.update_progress('Building transcriptome...')
     gtf_path = os.path.join(reference_path, cr_constants.REFERENCE_GENES_GTF_PATH)
     out_fa_path = martian.make_path('transcriptome.fa')
+    print "new_fa_path: {}".format(new_fa_path)
+    print "gtf_path: {}".format(gtf_path)
+    print "out_fa_path:{}".format(out_fa_path)
     # Only index the 1st encountered transcript per gene
     run(['detect_chemistry', 'get-transcripts', new_fa_path, gtf_path, out_fa_path])
 
